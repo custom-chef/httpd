@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerAlias *
+    VirtualDocumentRoot /var/www/sites/%0/htdocs
+    CustomLog    logs/vhost_access_log combined
+    ErrorLog    logs/vhost_error_log
+    <Directory "/var/www/sites">
+        AllowOverride All
+        Options FollowSymlinks
+        Require all granted
+    </Directory>
+</VirtualHost>
