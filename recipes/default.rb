@@ -33,3 +33,8 @@ end
 file "/etc/httpd/conf.d/autoindex.conf" do
     action :delete
 end
+
+group "deploy" do
+    action :modify
+    members ['deploy,apache']
+end
