@@ -1,7 +1,7 @@
 <VirtualHost *:80>
-    ServerAlias *
-    VirtualDocumentRoot /var/www/sites/%0/htdocs
-    CustomLog    logs/vhost_access_log combined
+    ServerName <%= node['server_name'] %>
+    DocumentRoot /var/www/sites/<%= node['server_name'] %>/htdocs
+    CustomLog   logs/vhost_access_log combined
     ErrorLog    logs/vhost_error_log
     <Directory "/var/www/sites">
         AllowOverride All
