@@ -268,3 +268,6 @@ EnableSendfile on
 #
 # Load config files in the "/etc/httpd/conf.d" directory, if any.
 IncludeOptional conf.d/*.conf
+<% if node['app_env'] == 'local' then %>
+AccessFileName .htaccess_local
+<% end %>
